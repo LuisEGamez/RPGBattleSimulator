@@ -1,6 +1,8 @@
 package classes;
 
-public abstract class Character {
+import interfaces.Attacker;
+
+public abstract class Character implements Attacker {
     private int id;
     private String name;
     private int hp;
