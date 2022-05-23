@@ -11,7 +11,7 @@ public abstract class Character implements Attacker {
     private BigDecimal hp;
     private boolean isAlive = true;
 
-    private BigDecimal damage;
+    private BigDecimal damage = new BigDecimal(0);
 
     public Character(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal damage) {
         setId(id);
