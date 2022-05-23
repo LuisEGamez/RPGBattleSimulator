@@ -21,7 +21,7 @@ public class MenuGame {
                     exit = false;
                     break;
                 case 1:
-                    System.out.println(" 1");
+                    ;
                     break;
                 case 2:
                     System.out.println("2");
