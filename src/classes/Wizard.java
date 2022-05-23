@@ -1,12 +1,14 @@
 package classes;
 
+import java.math.BigDecimal;
+
 public class Wizard extends Character {
 
     private int mana;
-    private int intelligence;
+    private double intelligence;
 
-    public Wizard(int id, String name, int hp, boolean isAlive, int mana, int intelligence) {
-        super(id, name, hp, isAlive);
+    public Wizard(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal manage, int mana, double intelligence) {
+        super(id, name, hp, isAlive, manage);
         setMana(mana);
         setIntelligence(intelligence);
     }
@@ -19,11 +21,11 @@ public class Wizard extends Character {
         this.mana = mana;
     }
 
-    public int getIntelligence() {
+    public double getIntelligence() {
         return intelligence;
     }
 
-    public void setIntelligence(int intelligence) {
+    public void setIntelligence(double intelligence) {
         this.intelligence = intelligence;
     }
 

@@ -2,13 +2,18 @@ package classes;
 
 import interfaces.Attacker;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public abstract class Character implements Attacker {
     private int id;
     private String name;
-    private int hp;
-    private boolean isAlive;
+    private BigDecimal hp;
+    private boolean isAlive = true;
 
-    public Character(int id, String name, int hp, boolean isAlive) {
+    private BigDecimal damage;
+
+    public Character(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal damage) {
         setId(id);
         setName(name);
         setHp(hp);
@@ -31,12 +36,13 @@ public abstract class Character implements Attacker {
         this.name = name;
     }
 
-    public int getHp() {
+    public BigDecimal getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setHp(BigDecimal hp) {
+        this.hp = hp.setScale(1, RoundingMode.HALF_EVEN);
+
     }
 
     public boolean isAlive() {
@@ -44,6 +50,26 @@ public abstract class Character implements Attacker {
     }
 
     public void setAlive(boolean isAlive) {
-        this.isAlive = isAlive;
+        if(hp.compareTo(BigDecimal.ZERO) <= 0) {
+            this.isAlive = false;
+        }
+        //hace falta tener ese parametro?
     }
+
+    public BigDecimal getDamage() {
+        return damage;
+    }
+
+    public void setDamage(BigDecimal damage) {
+
+        this.damage = damage.setScale(1, RoundingMode.HALF_EVEN);
+    }
+    protected void decreaseHP(){
+        BigDecimal decrease;
+        decrease = hp.subtract(damage);
+        System.out.println("Tengo tanto de vida " + decrease);
+    }
+
+
+
 }
