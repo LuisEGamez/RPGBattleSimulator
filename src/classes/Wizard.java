@@ -27,8 +27,23 @@ public class Wizard extends Character {
         this.intelligence = intelligence;
     }
 
-    @Override public void attack() {
+
+    @Override
+    public int attack() {
         //if possible FIREBALL
-        //else STAFF HIT
+        if( mana >= 5){
+            int damage = intelligence * -1;
+            setHp(damage);
+            decreaseHp (damage); //?? of target
+            mana = intelligence - 5;
+            //else STAFF HIT
+        } else {
+            int damage = (intelligence- 2) * -1;
+            setHp (damage);
+            decreaseHp(damage); // ??of target
+            mana += 1;
+        }
+        return mana;
+
     }
 }

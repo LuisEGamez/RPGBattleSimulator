@@ -46,4 +46,15 @@ public abstract class Character implements Attacker {
     public void setAlive(boolean isAlive) {
         this.isAlive = isAlive;
     }
+
+
+    public void increaseHp(int damage){
+        hp += damage;
+
+    }
+    public void decreaseHp(int damage){
+        hp -= damage;
+
+    }
 }
+
