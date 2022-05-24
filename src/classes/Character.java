@@ -18,7 +18,7 @@ public abstract class Character implements Attacker {
         setName(name);
         setHp(hp);
         setAlive(isAlive);
-        setDamage(damage);
+       // setDamage(damage);
     }
 
     public int getId() {
@@ -65,5 +65,9 @@ public abstract class Character implements Attacker {
     }
 
 
+    //public void decreaseHp(int hp){
+        ;
 
+    }
 }
+
