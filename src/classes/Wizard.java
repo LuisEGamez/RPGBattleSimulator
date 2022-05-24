@@ -29,21 +29,17 @@ public class Wizard extends Character {
 
 
     @Override
-    public int attack() {
+    public int void attack(Character character) {
         //if possible FIREBALL
         if( mana >= 5){
-            int damage = intelligence * -1;
-            setHp(damage);
-            decreaseHp (damage); //?? of target
-            mana = intelligence - 5;
+            System.out.println("Fireball");
+            character.setHp(character.getHp() - intelligence);
+            mana -= 5;
             //else STAFF HIT
         } else {
-            int damage = (intelligence- 2) * -1;
-            setHp (damage);
-            decreaseHp(damage); // ??of target
+            System.out.println("Staff hit");
+            character.setHp(character.getHp() - 2);
             mana += 1;
         }
-        return mana;
-
     }
 }

@@ -31,20 +31,17 @@ public class Warrior extends Character {
 
 
     @Override
-    public int attack() {
+    public void attack(Character character) {
         if( stamina >= 5){
-            int damage = stamina ;
-            setHp(damage);
-            decreaseHp (damage); //?? of target
-            stamina = strength - 5;
+            System.out.println("Heavy Attack");
+            character.setHp(character.getHp() - strength); //decreases Hp of enemy
+            stamina -= 5;
             //else STAFF HIT
         } else {
-            int damage = strength/2 ;
-            setHp (damage);
-            decreaseHp(damage); // ??of target
+            System.out.println("Weak Attack");
+            character.setHp(character.getHp() - strength/2);
             stamina += 1;
         }
-        return stamina;
     }
 }
 
