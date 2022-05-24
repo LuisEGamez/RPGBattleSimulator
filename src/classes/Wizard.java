@@ -7,9 +7,8 @@ public class Wizard extends Character {
     private int mana;
     private double intelligence;
 
-    public Wizard(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal damage, int mana,
-                  double intelligence) {
-        super(id, name, hp, isAlive, damage);
+    public Wizard(int id, String name, double hp, boolean isAlive, int mana, double intelligence) {
+        super(id, name, hp, isAlive);
         setMana(mana);
         setIntelligence(intelligence);
     }
