@@ -6,8 +6,9 @@ public class Warrior extends Character {
     private int stamina;
     private double strength;
 
-    public Warrior(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal manage, int stamina, double strength) {
-        super(id, name, hp, isAlive, manage);
+    public Warrior(int id, String name, double hp, boolean isAlive, int stamina,
+                   double strength) {
+        super(id, name, hp, isAlive);
         setStamina(stamina);
         setStrength(strength);
     }
