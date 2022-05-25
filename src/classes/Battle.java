@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Battle {
+
     private ArrayList<Character> party1 = Parties.userArmy;
     private ArrayList<Character> party2 = Parties.enemyArmy;
 
@@ -33,7 +34,8 @@ public class Battle {
         System.err.println("There's nothing here yet");
     }
 
-    public void battle (){
+
+    public static void battle (){
 
         while(!party1.isEmpty() || !party2.isEmpty()){
             party1.get(0).attack(party2.get(0));
