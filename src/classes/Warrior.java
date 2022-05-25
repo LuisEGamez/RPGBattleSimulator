@@ -1,6 +1,10 @@
 package classes;
 
-import java.math.BigDecimal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class Warrior extends Character {
     private int stamina;
@@ -29,21 +33,17 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-    @Override public void attack(Character character) {
-        /*
-        if(stamina >= 5){
-            System.out.println("I'm going to make a Heavy attack");
 
-       
-
-            //setDamage(BigDecimal.valueOf(strength));
-            decreaseHP();
+    @Override
+    public void attack(Character character) {
+        if( stamina >= 5){
+            System.out.println("Heavy Attack");
+            character.setHp(character.getHp() - strength); //decreases Hp of enemy
             stamina -= 5;
+            //else STAFF HIT
         } else {
-            System.out.println("I'm going to make a Weak attack");
-
-            decreaseHP();
-
+            System.out.println("Weak Attack");
+            character.setHp(character.getHp() - strength/2);
             stamina += 1;
         }*/
 
@@ -51,11 +51,13 @@ public class Warrior extends Character {
 
     @Override
     public String toString() {
-
-        return super.toString() + "Warrior{" +
-
+        return super.toString()  + "Warrior{" +
                 "stamina=" + stamina +
                 ", strength=" + strength +
                 '}';
     }
 }
+
+
+
+
