@@ -56,20 +56,6 @@ public abstract class Character implements Attacker {
         //hace falta tener ese parametro?
     }
 
-    public abstract void attack(Character character);
-
-    @Override
-    public String toString() {
-        return "Character{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", hp=" + hp +
-                ", isAlive=" + isAlive +
-                '}';
-    }
-  
-
-    }
     @Override
     public String toString() {
         return "Character{" +

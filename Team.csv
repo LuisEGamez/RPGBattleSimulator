@@ -1,0 +1,2 @@
+Character{id=1, name='pablo', hp=50.0, isAlive=true}Warrior{stamina=50, strength=100.0},
+Character{id=2, name='rocio', hp=70.0, isAlive=true}Warrior{stamina=60, strength=80.0}
