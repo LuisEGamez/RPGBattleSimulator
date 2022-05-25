@@ -33,11 +33,17 @@ public class Warrior extends Character {
         /*
         if(stamina >= 5){
             System.out.println("I'm going to make a Heavy attack");
-            setDamage(BigDecimal.valueOf(strength));
+
+       
+
+            //setDamage(BigDecimal.valueOf(strength));
+            decreaseHP();
             stamina -= 5;
         } else {
             System.out.println("I'm going to make a Weak attack");
-            setDamage(BigDecimal.valueOf((strength / 2)));
+
+            decreaseHP();
+
             stamina += 1;
         }*/
 
@@ -45,7 +51,9 @@ public class Warrior extends Character {
 
     @Override
     public String toString() {
+
         return super.toString() + "Warrior{" +
+
                 "stamina=" + stamina +
                 ", strength=" + strength +
                 '}';
