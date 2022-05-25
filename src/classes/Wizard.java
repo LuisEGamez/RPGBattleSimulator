@@ -32,14 +32,17 @@ public class Wizard extends Character {
     public void attack(Character character) {
         //if possible FIREBALL
         if( mana >= 5){
-            System.out.println("Fireball");
+            System.out.println("Fireball attack!");
             character.setHp(character.getHp() - intelligence);
             mana -= 5;
-            //else STAFF HIT
+            System.out.println("Now Wizard " + getName() + " has " + getHp() + " health points.\n  and " + getMana() +
+                    "  mana points.");
         } else {
-            System.out.println("Staff hit");
+            System.out.println("Staff hit attack!");
             character.setHp(character.getHp() - 2);
             mana += 1;
+            System.out.println("Now Wizard" + getName() + " has " + getHp() + " health points.\n  and " + getMana() +
+                    "  mana points.");
         }
     }
 

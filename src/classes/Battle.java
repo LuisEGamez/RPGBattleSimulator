@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 
 public class Battle {
-    private static ArrayList<Character> party1;
-    private static ArrayList<Character> party2;
+
+    private ArrayList<Character> party1 = Parties.userArmy;
+    private ArrayList<Character> party2 = Parties.enemyArmy;
 
     public Battle(ArrayList<Character> party1, ArrayList<Character> party2){
         setParty1(party1);
@@ -33,26 +34,29 @@ public class Battle {
         System.err.println("There's nothing here yet");
     }
 
-    public static void battle(){
-        int counter = 0;
+
+    public static void battle (){
+
         while(!party1.isEmpty() || !party2.isEmpty()){
-            if(counter % 2 == 0){
-                party1.get(0).attack(party2.get(0));
-                if(party2.get(0).getHp() <= 0){
-                    Graveyard.graveyardAdd(party2.remove(0));
-                }
+            party1.get(0).attack(party2.get(0));
+            System.out.println("You're attacking!");
+            party2.get(0).attack(party1.get(0));
+            System.out.println("The enemy is attacking");
+            if(party2.get(0).getHp() <= 0){
+                System.out.println("Your enemy was sent to the graveyard ");
+                Graveyard.graveyardAdd(party2.remove(0));
             } else {
-                party2.get(0).attack(party1.get(0));
-                if(party1.get(0).getHp() <= 0){
-                    Graveyard.graveyardAdd(party1.remove(0));
-                }
+                System.out.println("Sorry, you're dead, you're going to the graveyard");
+                Graveyard.graveyardAdd(party1.remove(0));
             }
-            counter++;
         }
+
         if(party1.isEmpty()){
-            System.out.println("The winner is party 2!");
-        } else{
-            System.out.println("The winner is party 1!");
+            System.out.println("You Lost.... do better next time!");
+        } else if (party2.isEmpty()){
+            System.out.println("You're the winner!");
+        } else {
+            System.out.println("It's a tie!");
         }
 
     }
