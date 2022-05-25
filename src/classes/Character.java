@@ -8,12 +8,12 @@ import java.math.RoundingMode;
 public abstract class Character implements Attacker {
     private int id;
     private String name;
-    private BigDecimal hp;
+    private double hp;
     private boolean isAlive = true;
 
-    private BigDecimal damage;
+   // private BigDecimal damage = new BigDecimal(0);
 
-    public Character(int id, String name, BigDecimal hp, boolean isAlive, BigDecimal damage) {
+    public Character(int id, String name, double hp, boolean isAlive) {
         setId(id);
         setName(name);
         setHp(hp);
@@ -37,12 +37,12 @@ public abstract class Character implements Attacker {
         this.name = name;
     }
 
-    public BigDecimal getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public void setHp(BigDecimal hp) {
-        this.hp = hp.setScale(1, RoundingMode.HALF_EVEN);
+    public void setHp(double hp) {
+        this.hp = hp;
 
     }
 
@@ -51,24 +51,17 @@ public abstract class Character implements Attacker {
     }
 
     public void setAlive(boolean isAlive) {
-        if(hp.compareTo(BigDecimal.ZERO) <= 0) {
+        if(this.hp <= 0) {
             this.isAlive = false;
-        }
+        } this.isAlive = true;
         //hace falta tener ese parametro?
     }
 
-    public BigDecimal getDamage() {
-        return damage;
-    }
-
-    public void setDamage(BigDecimal damage) {
-
-        this.damage = damage.setScale(1, RoundingMode.HALF_EVEN);
-    }
+    // ESTE DECREASEHP() TAMPOCO SERÍA NECESARIO. se hace todo con los getters y los setters
     protected void decreaseHP(){
-        BigDecimal decrease;
-        decrease = hp.subtract(damage);
-        System.out.println("Tengo tanto de vida " + decrease);
+        //BigDecimal decrease;
+        //decrease = hp.subtract(damage);
+        //System.out.println("Tengo tanto de vida " + decrease);
     }
 
 

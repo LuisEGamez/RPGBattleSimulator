@@ -27,7 +27,4 @@ public class Battle {
         this.party2 = party2;
     }
 
-
-
-
 }
