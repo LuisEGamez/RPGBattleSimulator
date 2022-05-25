@@ -16,7 +16,7 @@ public class App {
         Parties.createRandomParty();
         Parties.createRandomEnemyParty();
 
-         */
+
         for(Character chr : Parties.userArmy){
             System.out.println(chr);
 
