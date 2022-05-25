@@ -26,4 +26,5 @@ public class Battle {
     public void setParty2(ArrayList<? extends Character> party2) {
         this.party2 = party2;
     }
+
 }
