@@ -11,8 +11,6 @@ public abstract class Character implements Attacker {
     private double hp;
     private boolean isAlive = true;
 
-   // private BigDecimal damage = new BigDecimal(0);
-
     public Character(int id, String name, double hp, boolean isAlive) {
         setId(id);
         setName(name);
@@ -56,6 +54,7 @@ public abstract class Character implements Attacker {
         //hace falta tener ese parametro?
     }
 
+
     @Override
     public String toString() {
         return "Character{" +
@@ -65,5 +64,6 @@ public abstract class Character implements Attacker {
                 ", isAlive=" + isAlive +
                 '}';
     }
+
 }
 

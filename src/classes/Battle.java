@@ -28,6 +28,11 @@ public class Battle {
         this.party2 = party2;
     }
 
+
+    public static void fight() {
+        System.err.println("There's nothing here yet");
+    }
+
     public void battle (){
         int counter = 0;
         while(!party1.isEmpty() || !party2.isEmpty()){
@@ -51,6 +56,7 @@ public class Battle {
         }
 
     }
+
 
 
 }
