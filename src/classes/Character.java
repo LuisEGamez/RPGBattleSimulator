@@ -18,7 +18,7 @@ public abstract class Character implements Attacker {
         setName(name);
         setHp(hp);
         setAlive(isAlive);
-        setDamage(damage);
+
     }
 
     public int getId() {
@@ -64,6 +64,13 @@ public abstract class Character implements Attacker {
         //System.out.println("Tengo tanto de vida " + decrease);
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }

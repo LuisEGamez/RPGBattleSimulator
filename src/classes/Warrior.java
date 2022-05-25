@@ -29,7 +29,8 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
-    @Override public void attack() {
+    @Override public void attack(Character character) {
+        /*
         if(stamina >= 5){
             System.out.println("I'm going to make a Heavy attack");
             setDamage(BigDecimal.valueOf(strength));
@@ -38,9 +39,15 @@ public class Warrior extends Character {
             System.out.println("I'm going to make a Weak attack");
             setDamage(BigDecimal.valueOf((strength / 2)));
             stamina += 1;
-        }
+        }*/
 
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "Warrior{" +
+                "stamina=" + stamina +
+                ", strength=" + strength +
+                '}';
+    }
 }
