@@ -29,7 +29,17 @@ public class MenuGame {
                     exit = false;
                     break;
                 case 1:
-                    Parties.createParty();
+                    System.out.println("Would you like to create a party Manually or Randomly?");
+                    System.out.println("Select: \n" +
+                            "1. For Manually \n" +
+                            "2. For Randomly");
+                        int choice= scan.nextInt();
+                        if(choice == 1){
+                            Parties.createParty();
+                        }else{
+                            Parties.createRandomParty();
+                            System.out.println(Parties.userArmy);
+                        }
                     break;
                 case 2:
                     Parties.importParty();
