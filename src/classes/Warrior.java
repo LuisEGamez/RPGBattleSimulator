@@ -31,7 +31,12 @@ public class Warrior extends Character {
     }
 
     public void setStrength(double strength) {
-        this.strength = strength;
+        if(strength >= 1 || strength <= 10) {
+            this.strength = strength;
+        }
+        else {
+            System.err.println("You must choose between 1-10");
+        }
     }
 
 
@@ -41,7 +46,7 @@ public class Warrior extends Character {
             System.out.println("Heavy Attack");
             character.setHp(character.getHp() - strength); //decreases Hp of enemy
             stamina -= 5;
-            //else STAFF HIT
+
         } else {
             System.out.println("Weak Attack");
             character.setHp(character.getHp() - strength / 2);
@@ -49,6 +54,7 @@ public class Warrior extends Character {
         }
 
     }
+
     @Override
     public String toString() {
         return super.toString()  + "Warrior{" +
