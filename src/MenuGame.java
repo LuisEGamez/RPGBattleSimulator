@@ -81,6 +81,15 @@ public class MenuGame {
             System.out.println(wizard.toString());
             Parties.userArmy.add(wizard);
         }
+
+            System.out.println("Would you like to create more characters? \n" +
+                    "1. Yes \n" +
+                    "2. No \n ");
+            int flag = scan.nextInt();
+            if(flag == 1){
+                createParty();
+            }
+
         }catch (Exception e){
             System.out.println("You can only choose 1 or 2 ");
         }

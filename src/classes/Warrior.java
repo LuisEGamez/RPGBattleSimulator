@@ -45,17 +45,11 @@ public class Warrior extends Character {
             System.out.println("Weak Attack");
             character.setHp(character.getHp() - strength/2);
             stamina += 1;
-        }*/
+        }
 
     }
 
-    @Override
-    public String toString() {
-        return super.toString()  + "Warrior{" +
-                "stamina=" + stamina +
-                ", strength=" + strength +
-                '}';
-    }
+
 }
 
 
