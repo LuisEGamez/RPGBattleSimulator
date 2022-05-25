@@ -1,7 +1,7 @@
 package interfaces;
+import classes.Character;
 
 public interface Attacker {
 
-    int attack();
-
+     void attack(Character character);
 }
