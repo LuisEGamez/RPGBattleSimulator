@@ -30,8 +30,6 @@ public class MenuGame {
                     break;
                 case 1:
 
-                    System.out.println("1");
-
                     createParty();
 
                     break;
@@ -57,28 +55,24 @@ public class MenuGame {
         System.out.println("Choose 1 for Warrior or 2 for a Wizard");
         try{
         String groupType= scan.nextLine();
-        if(groupType == "1"){
+        if(groupType.equals("1")){
             System.out.println("Choose a name");
             String warName = scan.nextLine();
             System.out.println("Select Health Points");
             double hpWar = scan.nextDouble();
-            System.out.println("Select Damage");
-            double damage = scan.nextDouble();
             System.out.println("Select Stamina");
             int sta = scan.nextInt();
             System.out.println("Choose your Strength");
             double stre = scan.nextDouble();
             Warrior warrior = new Warrior(1, warName, hpWar, true, sta, stre);
-            System.out.println(warrior.toString());
             Parties.userArmy.add(warrior);
+            System.out.println(" Your warrior is: " + warrior.toString());
         }
-        if(groupType == "2"){
+        if(groupType.equals("2")){
             System.out.println("Choose a name");
             String wizName = scan.nextLine();
             System.out.println("Select Health points");
             double hpWiz = scan.nextDouble();
-            System.out.println("Select damage");
-            double damage = scan.nextDouble();
             System.out.println("Select Mana");
             int mana = scan.nextInt();
             System.out.println("Select Intelligence");
