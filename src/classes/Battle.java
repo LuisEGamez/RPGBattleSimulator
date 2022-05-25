@@ -30,7 +30,7 @@ public class Battle {
 
     public void battle (){
         int counter = 0;
-        while(!party1.isEmpty() && !party2.isEmpty()){
+        while(!party1.isEmpty() || !party2.isEmpty()){
             if(counter % 2 == 0){
                 party1.get(0).attack(party2.get(0));
                 if(party2.get(0).getHp() <= 0){
@@ -42,11 +42,14 @@ public class Battle {
                     Graveyard.graveyardAdd(party1.remove(0));
                 }
             }
-
             counter++;
-
-
         }
+        if(party1.isEmpty()){
+            System.out.println("The winner is party 2!");
+        } else{
+            System.out.println("The winner is party 1!");
+        }
+
     }
 
 
