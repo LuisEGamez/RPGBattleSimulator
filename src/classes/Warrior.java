@@ -32,11 +32,13 @@ public class Warrior extends Character {
     @Override public void attack() {
         if(stamina >= 5){
             System.out.println("I'm going to make a Heavy attack");
-            setDamage(BigDecimal.valueOf(strength));
+            //setDamage(BigDecimal.valueOf(strength));
+            decreaseHP();
             stamina -= 5;
         } else {
             System.out.println("I'm going to make a Weak attack");
-            setDamage(BigDecimal.valueOf((strength / 2)));
+           // setDamage(BigDecimal.valueOf((strength / 2)));
+            decreaseHP();
             stamina += 1;
         }
 
