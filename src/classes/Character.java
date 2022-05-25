@@ -56,13 +56,28 @@ public abstract class Character implements Attacker {
         //hace falta tener ese parametro?
     }
 
-    // ESTE DECREASEHP() TAMPOCO SERÍA NECESARIO. se hace todo con los getters y los setters
-    protected void decreaseHP(){
-        //BigDecimal decrease;
-        //decrease = hp.subtract(damage);
-        //System.out.println("Tengo tanto de vida " + decrease);
+    public abstract void attack(Character character);
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
     }
+  
 
-
-
+    }
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }
+
