@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 public class MenuGame {
     public static void menu(){
-        boolean exit = true;
+        boolean exit = false;
         Scanner scan = new Scanner(System.in);
         do{
             try{
 
             System.out.println("**************************************");
-            System.out.println("\t\t\tWelcome");
+            System.out.println("\t\t\t\tWelcome");
             System.out.println("**************************************");
             System.out.println("Please choose one of the options below: \n" +
                     " 1. Create a Party \n" +
@@ -26,7 +26,7 @@ public class MenuGame {
             switch (selection){
                 case 0:
                     System.out.println("You have exited the game");
-                    exit = false;
+                    exit = true;
                     break;
                 case 1:
                     System.out.println("Would you like to create a party Manually or Randomly?");
@@ -45,7 +45,11 @@ public class MenuGame {
                     Parties.importParty();
                     break;
                 case 3:
-                    Battle.fight();
+                    if(Parties.userArmy.size() != 0) {
+                        Parties.createRandomEnemyParty();
+                        Battle.battle();
+                    }
+                    else System.err.println("Your army is empty! Create or import a party.");
                     break;
                 default:
                     System.out.println("You have to select an appropriate option");
@@ -53,10 +57,8 @@ public class MenuGame {
             }catch (Exception e){
                 System.out.println("Options are from 0 to 3");
             }
-        }while (exit == true);
+        }while (!exit);
 
     }
-
-
 
 }
