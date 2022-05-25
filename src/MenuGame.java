@@ -29,15 +29,13 @@ public class MenuGame {
                     exit = false;
                     break;
                 case 1:
-
-                    createParty();
-
+                    Parties.createParty();
                     break;
                 case 2:
-                    importParty();
+                    Parties.importParty();
                     break;
                 case 3:
-                    fight();
+                    Battle.fight();
                     break;
                 default:
                     System.out.println("You have to select an appropriate option");
@@ -50,59 +48,5 @@ public class MenuGame {
     }
 
 
-    public static void createParty(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Choose 1 for Warrior or 2 for a Wizard");
-        try{
-        String groupType= scan.nextLine();
-        if(groupType.equals("1")){
-            System.out.println("Choose a name");
-            String warName = scan.nextLine();
-            System.out.println("Select Health Points");
-            double hpWar = scan.nextDouble();
-            System.out.println("Select Stamina");
-            int sta = scan.nextInt();
-            System.out.println("Choose your Strength");
-            double stre = scan.nextDouble();
-            Warrior warrior = new Warrior(1, warName, hpWar, true, sta, stre);
-            Parties.userArmy.add(warrior);
-            System.out.println(" Your warrior is: " + warrior.toString());
-        }
-        if(groupType.equals("2")){
-            System.out.println("Choose a name");
-            String wizName = scan.nextLine();
-            System.out.println("Select Health points");
-            double hpWiz = scan.nextDouble();
-            System.out.println("Select Mana");
-            int mana = scan.nextInt();
-            System.out.println("Select Intelligence");
-            double intel = scan.nextDouble();
-            Wizard wizard = new Wizard(2, wizName, hpWiz, true, mana, intel);
-            System.out.println(wizard.toString());
-            Parties.userArmy.add(wizard);
-        }
 
-            System.out.println("Would you like to create more characters? \n" +
-                    "1. Yes \n" +
-                    "2. No \n ");
-            int flag = scan.nextInt();
-            if(flag == 1){
-                createParty();
-            }
-
-        }catch (Exception e){
-            System.out.println("You can only choose 1 or 2 ");
-        }
-    }
-
-    public static void importParty(){
-    /*need to create a getter method in Parties class so I can call it? ex:
-        public List<Character> getList() {
-            return userArmy;
-        }*/
-
-    }
-
-    private static void fight() {
-    }
 }

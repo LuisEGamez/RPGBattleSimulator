@@ -30,7 +30,12 @@ public class Warrior extends Character {
     }
 
     public void setStrength(double strength) {
-        this.strength = strength;
+        if(strength >= 1 || strength <= 10) {
+            this.strength = strength;
+        }
+        else {
+            System.err.println("You must choose between 1-10");
+        }
     }
 
 
