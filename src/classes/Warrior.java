@@ -37,7 +37,7 @@ public class Warrior extends Character {
             stamina -= 5;
         } else {
             System.out.println("I'm going to make a Weak attack");
-            //setDamage(BigDecimal.valueOf((strength / 2)));
+
             decreaseHP();
             stamina += 1;
         }
