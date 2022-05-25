@@ -27,4 +27,8 @@ public class Battle {
         this.party2 = party2;
     }
 
+    public static void fight() {
+        System.err.println("There's nothing here yet");
+    }
+
 }
