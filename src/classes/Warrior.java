@@ -45,7 +45,7 @@ public class Warrior extends Character {
             System.out.println("Weak Attack");
             character.setHp(character.getHp() - strength/2);
             stamina += 1;
-        }
+        }*/
 
     }
 

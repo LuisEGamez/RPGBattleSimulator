@@ -18,7 +18,6 @@ public abstract class Character implements Attacker {
         setName(name);
         setHp(hp);
         setAlive(isAlive);
-      //  setDamage(damage);
     }
 
     public int getId() {
@@ -68,21 +67,17 @@ public abstract class Character implements Attacker {
                 ", isAlive=" + isAlive +
                 '}';
     }
-    // ESTE DECREASEHP() TAMPOCO SERÍA NECESARIO. se hace todo con los getters y los setters
-   // protected void decreaseHP(){
-        //BigDecimal decrease;
-        //decrease = hp.subtract(damage);
-        //System.out.println("Tengo tanto de vida " + decrease);
+  
 
     }
-
-
-
-
-  //  public void decreaseHp(int hp){
-  //      hp--;
-
-
-
-
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", isAlive=" + isAlive +
+                '}';
+    }
+}
 
