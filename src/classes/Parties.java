@@ -54,7 +54,13 @@ public class Parties {
                 Parties.addCharacter("1", id, wizName, hpWiz, mana, intel);
                 System.out.println(" You've created wizard': " + wizName);
             }
-            //
+            System.out.println("Would you like to create another character? \n" +
+                    "1. Yes! \n" +
+                    "2. No. I want to destroy my enemies now!");
+            int confirmation = scan.nextInt();
+            if (confirmation == 1) {
+                    createParty();
+            }
         }catch (Exception e){
             System.out.println("You can only choose 1 or 2");
         }

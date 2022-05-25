@@ -10,13 +10,14 @@ public class App {
     public static void main(String[] args) {
 
 
-        // MenuGame.menu();
+        MenuGame.menu();
 
+        /*
         Parties.addCharacter("1",1, "pablo", 50, 50, 100);
         Parties.createRandomParty();
         Parties.createRandomEnemyParty();
 
-         */
+
         for(Character chr : Parties.userArmy){
             System.out.println(chr);
 
@@ -27,6 +28,7 @@ public class App {
 
             System.out.println(chr.toString());
         }
+         */
     }
 
 
