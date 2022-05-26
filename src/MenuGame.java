@@ -4,6 +4,7 @@ import classes.Warrior;
 import classes.Wizard;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuGame {
@@ -14,14 +15,23 @@ public class MenuGame {
             try{
 
             System.out.println("**************************************");
-            System.out.println("\t\t\t\tWelcome");
-            System.out.println("**************************************");
+            System.out.println("*\tWelcome to RPG Battle Simulator\t *");
+            System.out.println("************************************** \n \n");
             System.out.println("Please choose one of the options below: \n" +
                     " 1. Create a Party \n" +
                     " 2. Import a Party \n" +
-                    " 3. Fight \n" +
+                    " 3. Delete a Party  \n" +
+                    " 4. Fight \n" +
                     " 0. Exit the Game \n");
-            int selection = scan.nextInt();
+
+                if (Parties.userArmy.size() == 0) {
+                    System.err.println("Your army is empty and enemies are getting closer!");
+                } else {
+                    System.err.println("Your army: " + Parties.userArmy);
+                }
+
+                int selection = scan.nextInt();
+
 
             switch (selection){
                 case 0:
@@ -38,13 +48,17 @@ public class MenuGame {
                             Parties.createParty();
                         }else{
                             Parties.createRandomParty();
-                            System.out.println(Parties.userArmy);
                         }
                     break;
                 case 2:
                     Parties.importParty();
                     break;
                 case 3:
+                    ArrayList<Character> userArmyCopy = (ArrayList<Character>) Parties.userArmy.clone();
+                    Parties.userArmy.removeAll(userArmyCopy);
+                    System.err.println("The army has been deleted");
+                    break;
+                case 4:
                     if(Parties.userArmy.size() != 0) {
                         Parties.createRandomEnemyParty();
                         Battle.battle();
@@ -52,10 +66,11 @@ public class MenuGame {
                     else System.err.println("Your army is empty! Create or import a party.");
                     break;
                 default:
-                    System.out.println("You have to select an appropriate option");
+                    System.err.println("You have to select an appropriate option");
             }
             }catch (Exception e){
                 System.out.println("Options are from 0 to 3");
+                scan.next();
             }
         }while (!exit);
 
