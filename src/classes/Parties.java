@@ -91,11 +91,15 @@ public class Parties {
                 if (character.equals("Warrior")) {
                     userArmy.add(new Warrior(id, name, hp,isLive,special1, special2));
                     counter++;
+
                 } else {
                     userArmy.add(new Wizard(id, name, hp,isLive,special1, special2));
                     counter++;
+
                 }
             }
+
+
     }
 
     public static void addCharacter(String type, int id, String name, double hp,

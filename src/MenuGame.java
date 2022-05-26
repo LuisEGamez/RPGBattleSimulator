@@ -1,5 +1,6 @@
 import classes.*;
 
+import java.io.FileNotFoundException;
 import java.lang.Character;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,10 +10,7 @@ public class MenuGame {
     public static void menu(){
 
         final String ANSI_RESET = "\u001B[0m";
-        final String ANSI_BLACK = "\u001B[30m";
         final String ANSI_RED = "\u001B[31m";
-        final String ANSI_GREEN = "\u001B[32m";
-        final String ANSI_YELLOW = "\u001B[33m";
         final String ANSI_BLUE = "\u001B[34m";
         final String ANSI_PURPLE = "\u001B[35m";
         final String ANSI_WHITE = "\u001B[37m";
