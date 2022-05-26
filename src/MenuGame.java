@@ -4,6 +4,7 @@ import classes.Warrior;
 import classes.Wizard;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuGame {
@@ -19,8 +20,10 @@ public class MenuGame {
             System.out.println("Please choose one of the options below: \n" +
                     " 1. Create a Party \n" +
                     " 2. Import a Party \n" +
-                    " 3. Fight \n" +
+                    " 3. Delete a Party  \n" +
+                    " 4. Fight \n" +
                     " 0. Exit the Game \n");
+
                 if (Parties.userArmy.size() == 0) {
                     System.err.println("Your army is empty and enemies are getting closer!");
                 } else {
@@ -28,6 +31,7 @@ public class MenuGame {
                 }
 
                 int selection = scan.nextInt();
+
 
             switch (selection){
                 case 0:
@@ -50,6 +54,11 @@ public class MenuGame {
                     Parties.importParty();
                     break;
                 case 3:
+                    ArrayList<Character> userArmyCopy = (ArrayList<Character>) Parties.userArmy.clone();
+                    Parties.userArmy.removeAll(userArmyCopy);
+                    System.err.println("The army has been deleted");
+                    break;
+                case 4:
                     if(Parties.userArmy.size() != 0) {
                         Parties.createRandomEnemyParty();
                         Battle.battle();
@@ -61,6 +70,7 @@ public class MenuGame {
             }
             }catch (Exception e){
                 System.out.println("Options are from 0 to 3");
+                scan.next();
             }
         }while (!exit);
 
