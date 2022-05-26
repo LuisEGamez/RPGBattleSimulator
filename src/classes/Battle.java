@@ -35,18 +35,28 @@ public class Battle {
     }
 
 
+
     public static void battle (){
 
-        while(!party1.isEmpty() || !party2.isEmpty()){
-            System.out.println("You're attacking!");
+        while(!party1.isEmpty() && !party2.isEmpty()){
+
+            System.out.println(party1.get(0).getName() + ", you're attacking!");
+            System.out.println("-----------------------------------------------------");
+
             party1.get(0).attack(party2.get(0));
-            System.out.println("The enemy is attacking");
+
+            System.out.println(party2.get(0).getName() + ", the enemy, is attacking");
+            System.out.println("-----------------------------------------------------");
+
             party2.get(0).attack(party1.get(0));
             if(party2.get(0).getHp() <= 0){
-                System.out.println("Your enemy was sent to the graveyard ");
+                System.out.println(party1.get(0).getName()+ "Your enemy was sent to the graveyard ");
+                System.out.println("-----------------------------------------------------");
                 Graveyard.graveyardAdd(party2.remove(0));
-            } else {
+            }
+            if(party1.get(0).getHp() <= 0){
                 System.out.println("Sorry, you're dead, you're going to the graveyard");
+                System.out.println("-----------------------------------------------------");
                 Graveyard.graveyardAdd(party1.remove(0));
             }
         }
@@ -58,6 +68,7 @@ public class Battle {
         } else {
             System.out.println("It's a tie!");
         }
+
 
     }
 
