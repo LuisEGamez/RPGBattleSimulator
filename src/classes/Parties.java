@@ -73,7 +73,6 @@ public class Parties {
     }
 
     public static void importParty() throws FileNotFoundException {
-        System.out.println("HEREEEE");
         File fileNew = new File("Team.csv");
         Scanner reader = new Scanner(fileNew);
 
@@ -96,9 +95,7 @@ public class Parties {
                     userArmy.add(new Wizard(id, name, hp,isLive,special1, special2));
                     counter++;
                 }
-            };
-
-
+            }
     }
 
     public static void addCharacter(String type, int id, String name, double hp,
