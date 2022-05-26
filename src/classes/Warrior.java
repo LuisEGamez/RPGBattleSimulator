@@ -1,6 +1,7 @@
 package classes;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class Warrior extends Character {
 
     @Override
     public void attack(Character character) {
+
         if( stamina >= 5){
 
             System.out.println(getName() + " using Heavy Attack");
@@ -60,6 +62,7 @@ public class Warrior extends Character {
 
             System.out.println(toString());
             System.out.println("-----------------------------------------------------");
+
         }
 
     }
@@ -69,6 +72,7 @@ public class Warrior extends Character {
         return super.toString() + "\n" +
         "stamina= " + stamina + "\n" +
         "strength= " + strength;
+
     }
 }
 

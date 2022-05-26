@@ -16,7 +16,7 @@ public abstract class Character implements Attacker {
         setName(name);
         setHp(hp);
         setAlive(isAlive);
-    }
+   }
 
     public int getId() {
         return id;
@@ -53,6 +53,7 @@ public abstract class Character implements Attacker {
         } this.isAlive = true;
         //hace falta tener ese parametro?
     }
+
 
 
     @Override
