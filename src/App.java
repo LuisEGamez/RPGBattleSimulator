@@ -11,7 +11,12 @@ public class App {
 
 
 
+<<<<<<< HEAD
          MenuGame.menu();
+=======
+        MenuGame.menu();
+
+>>>>>>> e100297cf0ca0fb678c7c720f2b9a023181dcae8
 
         /*
         Parties.addCharacter("1",1, "pablo", 50, 50, 100);
