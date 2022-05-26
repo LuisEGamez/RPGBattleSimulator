@@ -33,7 +33,7 @@ public class Wizard extends Character {
         //if possible FIREBALL
         if( mana >= 5){
 
-            System.out.println(getName() + " using Fireball attack!");
+            System.out.println(getName() + " is using Fireball attack!");
             System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - intelligence);
             mana -= 5;
@@ -42,7 +42,7 @@ public class Wizard extends Character {
             System.out.println("-----------------------------------------------------");
         } else {
 
-            System.out.println(getName() + " using Staff hit attack!");
+            System.out.println(getName() + " is using Staff hit attack!");
             System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - 2);
             mana += 1;
@@ -55,8 +55,8 @@ public class Wizard extends Character {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-                "mana= " + mana + "\n" +
-                "intelligence= " + intelligence;
+        return super.toString()  +
+                ", mana= " + mana  +
+                ", intelligence= " + intelligence ;
     }
 }

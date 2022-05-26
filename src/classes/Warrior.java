@@ -45,7 +45,7 @@ public class Warrior extends Character {
 
         if( stamina >= 5){
 
-            System.out.println(getName() + " using Heavy Attack");
+            System.out.println(getName() + " is using Heavy Attack");
             System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - strength); //decreases Hp of enemy
             stamina -= 5;
@@ -56,7 +56,7 @@ public class Warrior extends Character {
 
         } else {
 
-            System.out.println(getName() + " using Weak Attack");
+            System.out.println(getName() + " is using Weak Attack");
             System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - strength/2);
             stamina += 1;
@@ -71,9 +71,9 @@ public class Warrior extends Character {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
-        "stamina= " + stamina + "\n" +
-        "strength= " + strength;
+        return super.toString()  +
+        ", stamina= " + stamina  +
+        ", strength= " + strength ;
 
     }
 }

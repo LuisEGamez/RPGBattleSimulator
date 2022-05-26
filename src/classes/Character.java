@@ -59,8 +59,8 @@ public abstract class Character implements Attacker {
     @Override
     public String toString() {
         return
-                "name= " + name + "\n" +
-                "hp= " + hp;
+                "\n name= " + name + ", hp= " + hp;
+
     }
 
 
