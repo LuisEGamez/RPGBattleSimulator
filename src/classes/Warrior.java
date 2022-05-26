@@ -45,14 +45,14 @@ public class Warrior extends Character {
             System.out.println("Heavy Attack");
             character.setHp(character.getHp() - strength); //decreases Hp of enemy
             stamina -= 5;
-            System.out.println("Now Warrior " + getName() + " has " + getHp() + " health points.\n  and " + getStamina() +
+            System.out.println("Now Warrior " + getName() + " has " + getHp() + " health points\n  and " + getStamina() +
                     "  stamina points.");
 
         } else {
             System.out.println("Weak Attack");
             character.setHp(character.getHp() - strength/2);
             stamina += 1;
-            System.out.println("Now Warrior " + getName() + " has " + getHp() + " health points.\n  and " + getStamina() +
+            System.out.println("Now Warrior " + getName() + " has " + getHp() + " health points\n  and " + getStamina() +
                     "  stamina points.");
         }
 

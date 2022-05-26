@@ -14,14 +14,20 @@ public class MenuGame {
             try{
 
             System.out.println("**************************************");
-            System.out.println("\t\t\t\tWelcome");
-            System.out.println("**************************************");
+            System.out.println("*\tWelcome to RPG Battle Simulator\t *");
+            System.out.println("************************************** \n \n");
             System.out.println("Please choose one of the options below: \n" +
                     " 1. Create a Party \n" +
                     " 2. Import a Party \n" +
                     " 3. Fight \n" +
                     " 0. Exit the Game \n");
-            int selection = scan.nextInt();
+                if (Parties.userArmy.size() == 0) {
+                    System.err.println("Your army is empty and enemies are getting closer!");
+                } else {
+                    System.err.println("Your army: " + Parties.userArmy);
+                }
+
+                int selection = scan.nextInt();
 
             switch (selection){
                 case 0:
@@ -38,7 +44,6 @@ public class MenuGame {
                             Parties.createParty();
                         }else{
                             Parties.createRandomParty();
-                            System.out.println(Parties.userArmy);
                         }
                     break;
                 case 2:
@@ -52,7 +57,7 @@ public class MenuGame {
                     else System.err.println("Your army is empty! Create or import a party.");
                     break;
                 default:
-                    System.out.println("You have to select an appropriate option");
+                    System.err.println("You have to select an appropriate option");
             }
             }catch (Exception e){
                 System.out.println("Options are from 0 to 3");
