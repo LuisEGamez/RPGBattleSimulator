@@ -9,14 +9,8 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
 
-
-
-<<<<<<< HEAD
          MenuGame.menu();
-=======
-        MenuGame.menu();
 
->>>>>>> e100297cf0ca0fb678c7c720f2b9a023181dcae8
 
         /*
         Parties.addCharacter("1",1, "pablo", 50, 50, 100);
