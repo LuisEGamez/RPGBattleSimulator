@@ -35,6 +35,7 @@ public class Battle {
     }
 
 
+
     public static void battle (){
 
         while(!party1.isEmpty() && !party2.isEmpty()){
@@ -67,6 +68,7 @@ public class Battle {
         } else {
             System.out.println("It's a tie!");
         }
+
 
     }
 

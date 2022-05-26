@@ -50,6 +50,7 @@ public class Warrior extends Character {
             character.setHp(character.getHp() - strength); //decreases Hp of enemy
             stamina -= 5;
 
+
             System.out.println(toString());
             System.out.println("-----------------------------------------------------");
 
@@ -59,6 +60,7 @@ public class Warrior extends Character {
             System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - strength/2);
             stamina += 1;
+
 
             System.out.println(toString());
             System.out.println("-----------------------------------------------------");
