@@ -11,10 +11,11 @@ public class App {
 
 
 
+
         MenuGame.menu();
 
 
-        /*
+
         Parties.addCharacter("1",1, "pablo", 50, 50, 100);
         Parties.createRandomParty();
         Parties.createRandomEnemyParty();
@@ -23,10 +24,12 @@ public class App {
         for(Character chr : Parties.userArmy){
             System.out.println(chr);
 
+
         System.out.println("TEST" + chr.toString());
         }
         System.out.println("===========");
         for(Character chr : Parties.enemyArmy){
+
 
             System.out.println(chr.toString());
         }
