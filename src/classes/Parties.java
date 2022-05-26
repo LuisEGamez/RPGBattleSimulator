@@ -84,11 +84,14 @@ public class Parties {
         } catch (FileNotFoundException e) {
             System.err.println("There's nothing here yet");
         }
-       /* String[] primeralinea = cogerprimeralinea.split(",");
+        /*
+       String[] primeralinea = cogerprimeralinea.split(",");
         String name = primeralinea[3];
         String year = primeralinea[1];
         String age = primeralinea[2];
-        String movie = primeralinea[4];*/
+        String movie = primeralinea[4];
+        */
+
 
 
     }
