@@ -1,5 +1,7 @@
 package classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,12 +62,25 @@ public class Parties {
         }
     }
 
-    public static void importParty(){
-        System.err.println("There's nothing here yet");
-    /*need to create a getter method in Parties class so I can call it? ex:
-        public List<Character> getList() {
-            return userArmy;
-        }*/
+    public static void importParty() {
+
+        File fileNew = new File("Team.csv");
+        Scanner reader = null;
+        try {
+            reader = new Scanner(fileNew);
+            while(reader.hasNextLine()){
+
+            };
+        } catch (FileNotFoundException e) {
+            System.err.println("There's nothing here yet");
+        }
+       /* String[] primeralinea = cogerprimeralinea.split(",");
+        String name = primeralinea[3];
+        String year = primeralinea[1];
+        String age = primeralinea[2];
+        String movie = primeralinea[4];*/
+
+
     }
 
     public static void addCharacter(String type, int id, String name, double hp,
