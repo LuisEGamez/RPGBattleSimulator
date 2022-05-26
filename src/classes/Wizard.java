@@ -32,23 +32,31 @@ public class Wizard extends Character {
     public void attack(Character character) {
         //if possible FIREBALL
         if( mana >= 5){
-            System.out.println("Fireball");
+
+            System.out.println(getName() + " using Fireball attack!");
+            System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - intelligence);
             mana -= 5;
-            //else STAFF HIT
+
+            System.out.println(toString());
+            System.out.println("-----------------------------------------------------");
         } else {
-            System.out.println("Staff hit");
+
+            System.out.println(getName() + " using Staff hit attack!");
+            System.out.println("-----------------------------------------------------");
             character.setHp(character.getHp() - 2);
             mana += 1;
+
+            System.out.println(toString());
+            System.out.println("-----------------------------------------------------");
         }
     }
 
 
     @Override
     public String toString() {
-        return super.toString() + "Wizard{" +
-                "mana=" + mana +
-                ", intelligence=" + intelligence +
-                '}';
+        return super.toString() + "\n" +
+                "mana= " + mana + "\n" +
+                "intelligence= " + intelligence;
     }
 }

@@ -1,2 +1,13 @@
-Character{id=1, name='pablo', hp=50.0, isAlive=true}Warrior{stamina=50, strength=100.0},
-Character{id=2, name='rocio', hp=70.0, isAlive=true}Warrior{stamina=60, strength=80.0}
+
+Warrior, jaume, 50.0, stamina=50, strength=100.0
+WizardCharacter{id=2, name='motoko', hp=90.0, isAlive=true}{mana=60, intelligence=80.0},
+Character{id=3, name='adriana', hp=70.0, isAlive=true}{stamina=60, strength=80.0},
+Character{id=4, name='pablo', hp=60.0, isAlive=true}Wizard{mana=60, intelligence=80.0},
+Character{id=5, name='rocio', hp=80.0, isAlive=true}Warrior{stamina=90, strength=60.0},
+Character{id=6, name='jose', hp=100.0, isAlive=true}Warrior{stamina=40, strength=90.0},
+Character{id=7, name='antonio', hp=90.0, isAlive=true}Warrior{stamina=70, strength=70.0},
+Character{id=8, name='pepa', hp=40.0, isAlive=true}Wizard{mana=60, intelligence=80.0},
+Character{id=9, name='lucia', hp=90.0, isAlive=true}Warrior{stamina=90, strength=60.0}
+
+
+

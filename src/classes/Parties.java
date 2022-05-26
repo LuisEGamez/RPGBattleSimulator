@@ -1,10 +1,15 @@
 package classes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Parties {
 
+    public static int counter = 0;
     private static int id;
     private static double warriorHp = Math.floor(Math.random()*(101) + 100);
     private static double wizardHp = Math.floor(Math.random()*(51) + 50);
@@ -16,8 +21,80 @@ public class Parties {
     private static String name = namesArray[(int) Math.floor(Math.random()*(2737))];
 
     public static ArrayList<Character> userArmy = new ArrayList<>();
-    public  ArrayList<Character> enemyArmy = new ArrayList<>();
+    public static ArrayList<Character> enemyArmy = new ArrayList<>();
 
+
+
+
+
+    public static void createParty(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose 1 for Warrior or 2 for a Wizard");
+        try{
+            String groupType= scan.nextLine();
+            if(groupType.equals("1")){
+                System.out.println("Choose a name");
+                String warName = scan.nextLine();
+                System.out.println("Select Health Points");
+                double hpWar = scan.nextDouble();
+                System.out.println("Select Stamina");
+                int sta = scan.nextInt();
+                System.out.println("Choose your Strength");
+                double stre = scan.nextDouble();
+                int id = Parties.counter + 1;
+
+                Parties.addCharacter("1", id, warName, hpWar, sta, stre);
+                System.out.println(" You've created warrior: " + warName);
+            }
+            if(groupType.equals("2")){
+                System.out.println("Choose a name");
+                String wizName = scan.nextLine();
+                System.out.println("Select Health points");
+                double hpWiz = scan.nextDouble();
+                System.out.println("Select Mana");
+                int mana = scan.nextInt();
+                System.out.println("Select Intelligence");
+                double intel = scan.nextDouble();
+                int id = Parties.counter + 1;
+
+                Parties.addCharacter("1", id, wizName, hpWiz, mana, intel);
+                System.out.println(" You've created wizard': " + wizName);
+            }
+            System.out.println("Would you like to create another character? \n" +
+                    "1. Yes! \n" +
+                    "2. No. I want to destroy my enemies now!");
+            int confirmation = scan.nextInt();
+            if (confirmation == 1) {
+                    createParty();
+            }
+        }catch (Exception e){
+            System.out.println("You can only choose 1 or 2");
+        }
+    }
+
+    public static void importParty() {
+
+        File fileNew = new File("Team.csv");
+        Scanner reader = null;
+        try {
+            reader = new Scanner(fileNew);
+            while(reader.hasNextLine()){
+
+            };
+        } catch (FileNotFoundException e) {
+            System.err.println("There's nothing here yet");
+        }
+        /*
+       String[] primeralinea = cogerprimeralinea.split(",");
+        String name = primeralinea[3];
+        String year = primeralinea[1];
+        String age = primeralinea[2];
+        String movie = primeralinea[4];
+        */
+
+
+
+    }
 
     public static void addCharacter(String type, int id, String name, double hp,
                                     int staminaMana, double strengthIntelligence) {
@@ -26,28 +103,88 @@ public class Parties {
                 Warrior warrior = new Warrior(id, name, hp, true, staminaMana,
                     strengthIntelligence);
                 userArmy.add(warrior);
+                counter++;
                 break;
             case "2":
                 Wizard wizard = new Wizard(id, name, hp, true, staminaMana, strengthIntelligence);
                 userArmy.add(wizard);
+                counter++;
+                break;
         }
     }
 
     public static void createRandomParty() {
         double randomNumber = Math.floor(Math.random()*(10)+1);
-        double counter = randomNumber;
-        while(counter > 0) {
+        double counterRandom = randomNumber;
+        int id = counter + 1;
+        while(counterRandom > 0) {
             double type = Math.floor(Math.random()*(2)+1);
             switch((int) type) {
                 case 1:
                     Warrior warrior = new Warrior(id, name, warriorHp, true, stamina, strength);
                     userArmy.add(warrior);
+                    counterRandom--;
                     break;
                 case 2:
                     Wizard wizard = new Wizard(id, name, wizardHp, true, mana, intelligence);
                     userArmy.add(wizard);
+                    counterRandom--;
                     break;
             }
         }
     }
+
+    public static void createRandomEnemyParty() {
+        double randomNumber = Math.floor(Math.random()*(10)+1);
+        double counterRandom = userArmy.size();
+        int id = counter + 1;
+        while(counterRandom > 0) {
+            double type = Math.floor(Math.random()*(2)+1);
+            switch((int) type) {
+                case 1:
+                    Warrior warrior = new Warrior(id, name, warriorHp, true, stamina, strength);
+                    enemyArmy.add(warrior);
+                    counterRandom--;
+                    break;
+                case 2:
+                    Wizard wizard = new Wizard(id, name, wizardHp, true, mana, intelligence);
+                    enemyArmy.add(wizard);
+                    counterRandom--;
+                    break;
+            }
+        }
+    }
+
+
+    public static String nameLettersOnly() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose a name");
+        String warName = "";
+        while (warName.equals("")) {
+            try {
+                if (warName.matches("[A-Z]{20}")) {
+                    warName = scan.nextLine();
+                   // System.err.println("Only letter allowed");
+                }
+            } catch (Exception e) {
+                System.out.println("Only letters are allowed");
+            }
+        }
+
+        /*
+        System.out.println("Choose a name");
+         String warName = "";
+        while (warName.equals("")) {
+            try {
+                if (warName.matches("[A-Z]{20}")) {
+                    warName = scan.nextLine();
+                    System.err.println("Only letter allowed");
+                }
+            } catch (Exception e) {
+                System.out.println("Only letters are allowed");
+            }
+        }*/
+        return warName;
+    }
+
 }
