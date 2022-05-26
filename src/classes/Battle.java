@@ -38,10 +38,10 @@ public class Battle {
     public static void battle (){
 
         while(!party1.isEmpty() || !party2.isEmpty()){
-            party1.get(0).attack(party2.get(0));
             System.out.println("You're attacking!");
-            party2.get(0).attack(party1.get(0));
+            party1.get(0).attack(party2.get(0));
             System.out.println("The enemy is attacking");
+            party2.get(0).attack(party1.get(0));
             if(party2.get(0).getHp() <= 0){
                 System.out.println("Your enemy was sent to the graveyard ");
                 Graveyard.graveyardAdd(party2.remove(0));
