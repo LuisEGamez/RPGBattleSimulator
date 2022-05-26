@@ -64,12 +64,16 @@ public class Battle {
         }
 
         if(party1.isEmpty()){
+
             System.err.println("\n" + "You Lost.... do better next time!" + "\n");
+
         } else if (party2.isEmpty()){
             System.out.println("\n" + ANSI_GREEN + "You're the winner! And your enemies' corpses rest at " +
                     "the cemetery" + "\n");
         } else {
+
             System.err.println("\n" + "It's a tie!" + "\n");
+
         }
 
 

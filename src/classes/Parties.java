@@ -72,28 +72,30 @@ public class Parties {
         }
     }
 
-    public static void importParty() {
-
+    public static void importParty() throws FileNotFoundException {
         File fileNew = new File("Team.csv");
-        Scanner reader = null;
-        try {
-            reader = new Scanner(fileNew);
+        Scanner reader = new Scanner(fileNew);
+
             while(reader.hasNextLine()){
+                String[] primeralinea = reader.nextLine().split(",");
+                String character = primeralinea[0];
+                String name = primeralinea[1];
+                double hp = Double.parseDouble(primeralinea[2]);
+                boolean isLive = false;
+                if(primeralinea[3].equals("true")) isLive= true;
 
-            };
-        } catch (FileNotFoundException e) {
-            System.err.println("There's nothing here yet");
-        }
-        /*
-       String[] primeralinea = cogerprimeralinea.split(",");
-        String name = primeralinea[3];
-        String year = primeralinea[1];
-        String age = primeralinea[2];
-        String movie = primeralinea[4];
-        */
+                int special1 = Integer.parseInt(primeralinea[4]);
+                double special2 = Double.parseDouble(primeralinea[5]);
+                int id = counter + 1;
 
-
-
+                if (character.equals("Warrior")) {
+                    userArmy.add(new Warrior(id, name, hp,isLive,special1, special2));
+                    counter++;
+                } else {
+                    userArmy.add(new Wizard(id, name, hp,isLive,special1, special2));
+                    counter++;
+                }
+            }
     }
 
     public static void addCharacter(String type, int id, String name, double hp,
