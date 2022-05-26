@@ -10,7 +10,9 @@ public class App {
     public static void main(String[] args) {
 
 
+
         MenuGame.menu();
+
 
         /*
         Parties.addCharacter("1",1, "pablo", 50, 50, 100);

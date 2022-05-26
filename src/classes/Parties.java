@@ -3,6 +3,7 @@ package classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,6 +22,9 @@ public class Parties {
 
     public static ArrayList<Character> userArmy = new ArrayList<>();
     public static ArrayList<Character> enemyArmy = new ArrayList<>();
+
+
+
 
 
     public static void createParty(){
@@ -147,4 +151,37 @@ public class Parties {
             }
         }
     }
+
+
+    public static String nameLettersOnly() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose a name");
+        String warName = "";
+        while (warName.equals("")) {
+            try {
+                if (warName.matches("[A-Z]{20}")) {
+                    warName = scan.nextLine();
+                   // System.err.println("Only letter allowed");
+                }
+            } catch (Exception e) {
+                System.out.println("Only letters are allowed");
+            }
+        }
+
+        /*
+        System.out.println("Choose a name");
+         String warName = "";
+        while (warName.equals("")) {
+            try {
+                if (warName.matches("[A-Z]{20}")) {
+                    warName = scan.nextLine();
+                    System.err.println("Only letter allowed");
+                }
+            } catch (Exception e) {
+                System.out.println("Only letters are allowed");
+            }
+        }*/
+        return warName;
+    }
+
 }
