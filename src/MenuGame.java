@@ -1,8 +1,6 @@
-import classes.Battle;
-import classes.Parties;
-import classes.Warrior;
-import classes.Wizard;
+import classes.*;
 
+import java.lang.Character;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,6 +20,7 @@ public class MenuGame {
                     " 2. Import a Party \n" +
                     " 3. Delete a Party  \n" +
                     " 4. Fight \n" +
+                    " 5. +Graveyard+ \n" +
                     " 0. Exit the Game \n");
 
                 if (Parties.userArmy.size() == 0) {
@@ -39,7 +38,7 @@ public class MenuGame {
                     exit = true;
                     break;
                 case 1:
-                    System.out.println("Would you like to create a party Manually or Randomly?");
+                    System.out.println("Would you like to create a party Manually or Randomly? \n");
                     System.out.println("Select: \n" +
                             "1. For Manually \n" +
                             "2. For Randomly");
@@ -65,11 +64,15 @@ public class MenuGame {
                     }
                     else System.err.println("Your army is empty! Create or import a party.");
                     break;
+                case 5:
+                    System.err.println("Show your respects to the fallen");
+                    Graveyard.printGraveyardArray();
+                    break;
                 default:
                     System.err.println("You have to select an appropriate option");
             }
             }catch (Exception e){
-                System.out.println("Options are from 0 to 3");
+                System.out.println("Options are from 0 to 5");
                 scan.next();
             }
         }while (!exit);
