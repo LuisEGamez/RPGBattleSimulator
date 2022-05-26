@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Battle {
 
-    private ArrayList<Character> party1 = Parties.userArmy;
-    private ArrayList<Character> party2 = Parties.enemyArmy;
+    private static ArrayList<Character> party1 = Parties.userArmy;
+    private static ArrayList<Character> party2 = Parties.enemyArmy;
 
     public Battle(ArrayList<Character> party1, ArrayList<Character> party2){
         setParty1(party1);
@@ -18,7 +18,7 @@ public class Battle {
     }
 
     public void setParty1(ArrayList<Character> party1) {
-        this.party1 = party1;
+        Battle.party1 = party1;
     }
 
     public ArrayList<Character> getParty2() {
@@ -26,7 +26,7 @@ public class Battle {
     }
 
     public void setParty2(ArrayList<Character> party2) {
-        this.party2 = party2;
+        Battle.party2 = party2;
     }
 
 
