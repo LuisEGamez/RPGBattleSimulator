@@ -62,11 +62,11 @@ public class Battle {
         }
 
         if(party1.isEmpty()){
-            System.out.println("You Lost.... do better next time!");
+            System.out.println("You Lost.... do better next time!\n \n");
         } else if (party2.isEmpty()){
-            System.out.println("You're the winner!");
+            System.out.println("You're the winner!\n \n");
         } else {
-            System.out.println("It's a tie!");
+            System.out.println("It's a tie!\n \n");
         }
 
 
