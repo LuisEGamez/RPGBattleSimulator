@@ -53,10 +53,14 @@ public class Wizard extends Character {
     }
 
 
+    final String ANSI_GREEN = "\u001B[32m";
+    final String ANSI_WHITE = "\u001B[37m";
+    final String ANSI_RESET = "\u001B[0m";
+
     @Override
     public String toString() {
-        return super.toString()  +
-                ", mana= " + mana  +
-                ", intelligence= " + intelligence ;
+        return super.toString()  + ANSI_RESET +
+                ", mana= " + ANSI_GREEN + mana  + ANSI_RESET +
+                ", intelligence= " + ANSI_WHITE + intelligence + ANSI_RESET;
     }
 }
