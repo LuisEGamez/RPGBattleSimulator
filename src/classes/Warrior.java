@@ -69,11 +69,16 @@ public class Warrior extends Character {
 
     }
 
+    final String ANSI_RESET = "\u001B[0m";
+
+    final String ANSI_BLACK = "\u001B[30m";
+    final String ANSI_BLUE = "\u001B[34m";
+
     @Override
     public String toString() {
-        return super.toString()  +
-        ", stamina= " + stamina  +
-        ", strength= " + strength ;
+        return super.toString()  + ANSI_RESET +
+                ", stamina= " + ANSI_BLUE + stamina  + ANSI_RESET +
+                ", strength= " + ANSI_BLACK + strength + ANSI_RESET;
 
     }
 }

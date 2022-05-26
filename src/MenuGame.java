@@ -7,15 +7,26 @@ import java.util.Scanner;
 
 public class MenuGame {
     public static void menu(){
+
+        final String ANSI_RESET = "\u001B[0m";
+        final String ANSI_BLACK = "\u001B[30m";
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_GREEN = "\u001B[32m";
+        final String ANSI_YELLOW = "\u001B[33m";
+        final String ANSI_BLUE = "\u001B[34m";
+        final String ANSI_PURPLE = "\u001B[35m";
+        final String ANSI_WHITE = "\u001B[37m";
+        final String ANSI_CYAN = "\u001B[36m";
+
         boolean exit = false;
         Scanner scan = new Scanner(System.in);
         do{
             try{
 
-            System.out.println("**************************************");
+            System.out.println(ANSI_CYAN + "**************************************");
             System.out.println("*\tWelcome to RPG Battle Simulator\t *");
-            System.out.println("************************************** \n \n");
-            System.out.println("Please choose one of the options below: \n" +
+            System.out.println("************************************** \n");
+            System.out.println(ANSI_PURPLE + "Please choose one of the options below: \n" +
                     " 1. Create a Party \n" +
                     " 2. Import a Party \n" +
                     " 3. Delete a Party  \n" +
@@ -26,7 +37,7 @@ public class MenuGame {
                 if (Parties.userArmy.size() == 0) {
                     System.err.println("Your army is empty and enemies are getting closer!");
                 } else {
-                    System.err.println("Your army: " + Parties.userArmy);
+                    System.out.println(ANSI_RESET + "Your army: " + Parties.userArmy);
                 }
 
                 int selection = scan.nextInt();
@@ -34,12 +45,13 @@ public class MenuGame {
 
             switch (selection){
                 case 0:
-                    System.out.println("You have exited the game");
+                    System.out.println(ANSI_WHITE + "You have exited the game");
                     exit = true;
                     break;
                 case 1:
-                    System.out.println("Would you like to create a party Manually or Randomly? \n");
-                    System.out.println("Select: \n" +
+                    System.out.println(ANSI_BLUE + "Would you like to create a party Manually or Randomly? " +
+                            "\n");
+                    System.out.println(ANSI_PURPLE + "Select: \n" +
                             "1. For Manually \n" +
                             "2. For Randomly");
                         int choice= scan.nextInt();
@@ -55,7 +67,7 @@ public class MenuGame {
                 case 3:
                     ArrayList<Character> userArmyCopy = (ArrayList<Character>) Parties.userArmy.clone();
                     Parties.userArmy.removeAll(userArmyCopy);
-                    System.err.println("The army has been deleted");
+                    System.out.println(ANSI_RED + "The army has been deleted");
                     break;
                 case 4:
                     if(Parties.userArmy.size() != 0) {
@@ -65,14 +77,13 @@ public class MenuGame {
                     else System.err.println("Your army is empty! Create or import a party.");
                     break;
                 case 5:
-                    System.err.println("Show your respects to the fallen");
                     Graveyard.printGraveyardArray();
                     break;
                 default:
                     System.err.println("You have to select an appropriate option");
             }
             }catch (Exception e){
-                System.out.println("Options are from 0 to 5");
+                System.out.println(ANSI_WHITE + "Options are from 0 to 5 \n");
                 scan.next();
             }
         }while (!exit);

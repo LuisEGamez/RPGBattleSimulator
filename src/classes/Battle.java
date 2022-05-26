@@ -38,6 +38,8 @@ public class Battle {
 
     public static void battle (){
 
+        final String ANSI_GREEN = "\u001B[32m";
+
         while(!party1.isEmpty() && !party2.isEmpty()){
 
             System.out.println(party1.get(0).getName() + ", you're attacking!");
@@ -62,11 +64,12 @@ public class Battle {
         }
 
         if(party1.isEmpty()){
-            System.err.println("You Lost.... do better next time!");
+            System.err.println("\n" + "You Lost.... do better next time!" + "\n");
         } else if (party2.isEmpty()){
-            System.err.println("You're the winner!");
+            System.out.println("\n" + ANSI_GREEN + "You're the winner! And your enemies' corpses rest at " +
+                    "the cemetery" + "\n");
         } else {
-            System.err.println("It's a tie!");
+            System.err.println("\n" + "It's a tie!" + "\n");
         }
 
 

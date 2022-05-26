@@ -2,6 +2,7 @@ package classes;
 
 import interfaces.Attacker;
 
+import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -54,12 +55,15 @@ public abstract class Character implements Attacker {
         //hace falta tener ese parametro?
     }
 
+    final String ANSI_RED = "\u001B[31m";
+    final String ANSI_YELLOW = "\u001B[33m";
+    final String ANSI_RESET = "\u001B[0m";
 
 
     @Override
     public String toString() {
         return
-                "\n name= " + name + ", hp= " + hp;
+                "\n name= " + ANSI_YELLOW + name + ANSI_RESET + ", hp= " + ANSI_RED + hp;
 
     }
 
