@@ -11,8 +11,7 @@ public class Graveyard {
 
     public static void printGraveyardArray (){
         for(int i = 0; i <= graveyardList.size(); i++){
-            System.out.println(i);
+            System.out.println("+ " + graveyardList.get(i).getName());
         }
-
     }
 }
